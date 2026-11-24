@@ -264,8 +264,21 @@ main:focus { outline: none; }
   transform-origin: top; transform: scaleY(var(--fill, 0));
 }
 .timeline__date { color: var(--accent); font-size: 14px; display: block; }
-.timeline__title { font-size: 23px; letter-spacing: .05em; margin: 6px 0 14px; }
+.timeline__title { font-size: 23px; letter-spacing: .05em; margin: 6px 0 6px; }
 .timeline__body p { color: #cfcfcf; font-size: 16px; margin: 0; }
+.timeline__body .timeline__role { color: var(--muted); font-size: 14px; letter-spacing: .04em; margin-bottom: 10px; }
+.timeline__link {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
+  color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  position: relative; padding-bottom: 3px;
+}
+.timeline__link::after {
+  content: ""; position: absolute; left: 0; right: 22px; bottom: 0; height: 1px; background: var(--accent);
+  transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease);
+}
+.timeline__link svg { transition: transform .35s var(--ease); }
+.timeline__link:hover::after, .timeline__link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+.timeline__link:hover svg, .timeline__link:focus-visible svg { transform: translateX(4px); }
 
 /* ---------- Projetos ---------- */
 .tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -14px 0 36px; }

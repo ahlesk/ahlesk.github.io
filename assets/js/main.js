@@ -53,6 +53,7 @@
     burger.setAttribute("aria-label", t(nav.classList.contains("is-open") ? "ui.menuClose" : "ui.menuOpen"));
 
     renderTabs();
+    fillTimeline();
     renderProject(current, !firstRun);
     if (!firstRun) {
       typeKicker();
@@ -211,6 +212,51 @@
     if (focus) tabsEl.children[i].focus();
     renderProject(i, true);
   }
+
+  /* ---------------- Linha do tempo ("Minha trajetória") ----------------
+     Um item por projeto, do mais antigo para o mais recente.
+     Os elementos são criados uma vez (as animações do GSAP se ligam a eles)
+     e só os textos mudam quando o idioma é trocado. */
+  var timelineEl = $("#timeline");
+  var icoArrow = '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function buildTimeline() {
+    if (!timelineEl) return;
+    timelineEl.innerHTML = projects.map(function (p, i) { return i; }).reverse().map(function (i) {
+      return '<li class="timeline__item">' +
+        '<span class="timeline__dot" aria-hidden="true"></span>' +
+        '<div class="timeline__body">' +
+          '<span class="timeline__date mono" data-tl="period"></span>' +
+          '<h3 class="timeline__title" data-tl="name"></h3>' +
+          '<p class="timeline__role" data-tl="role"></p>' +
+          '<p data-tl="summary"></p>' +
+          '<a class="timeline__link" href="#projetos" data-project="' + i + '"><span data-tl="link"></span>' + icoArrow + "</a>" +
+        "</div></li>";
+    }).join("");
+  }
+
+  function fillTimeline() {
+    if (!timelineEl) return;
+    $$(".timeline__item", timelineEl).forEach(function (li) {
+      var p = projects[+$(".timeline__link", li).dataset.project];
+      $('[data-tl="period"]', li).textContent = tv(p.period);
+      $('[data-tl="name"]', li).textContent = tv(p.name);
+      $('[data-tl="role"]', li).textContent = t("ui.role") + ": " + tv(p.role) + (p.partner ? " · " + t("ui.partner") + ": " + tv(p.partner) : "");
+      $('[data-tl="summary"]', li).textContent = tv(p.summary);
+      $('[data-tl="link"]', li).textContent = t("ui.viewProject");
+    });
+  }
+
+  // "Ver projeto": abre a aba do projeto (a rolagem suave até #projetos é feita pelo handler global)
+  if (timelineEl) {
+    timelineEl.addEventListener("click", function (e) {
+      var a = e.target.closest("[data-project]");
+      if (!a) return;
+      var i = +a.dataset.project;
+      if (i !== current) selectTab(i);
+    });
+  }
+  buildTimeline();
 
   tabsEl.addEventListener("click", function (e) {
     var b = e.target.closest(".tab");

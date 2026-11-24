@@ -12,7 +12,7 @@ window.I18N_EN = {
 
   "hero.kicker": "hello, world",
   "hero.title1": "I'm",
-  "hero.subtitle": "Infrastructure & Support Analyst at GSW Software · Database student at Fatec Prof. Jessen Vidal",
+  "hero.subtitle": "Systems & Support Analyst at GSW Software · Database student at Fatec Prof. Jessen Vidal",
   "hero.cta1": "Read my story",
   "hero.cta2": "See projects",
 
@@ -20,23 +20,14 @@ window.I18N_EN = {
   "about.subtitle": "Who I am, what drives me and where I am today",
   "about.p1": "I'm <strong>Alexander Silva Lima</strong>, born in Belo Horizonte, Minas Gerais. I've always been passionate about technology: it has been part of my whole life and, as I grew up, my fondness for computing only grew.",
   "about.p2": "When I started my academic life, that connection grew stronger. I graduated as a technician from <strong>ETEC São José dos Campos</strong>, which took me one step closer to Fatec. Along the way, I learned about systems development, programming, databases and software architecture.",
-  "about.p3": "Today I study <strong>Databases</strong> at Fatec Prof. Jessen Vidal and work as an <strong>Infrastructure & Support Analyst</strong> at GSW Software, where I work with artificial intelligence, integrations with in-house systems, security, infrastructure and scalability.",
+  "about.p3": "Today I study <strong>Databases</strong> at Fatec Prof. Jessen Vidal and work as a <strong>Systems & Support Analyst</strong> at GSW Software, where I work with artificial intelligence, integrations with in-house systems, security, infrastructure and scalability.",
 
   "skills.lang": "Languages",
   "skills.back": "Back-end & data",
   "skills.tools": "Tools & methods",
 
   "journey.title": "My journey",
-  "journey.subtitle": "The moments that brought me here",
-  "journey.date1": "Feb 2024",
-  "journey.t1": "Starting at Fatec Prof. Jessen Vidal",
-  "journey.d1": "I enrolled in the Database course, where I've been deepening my knowledge of systems development, programming, databases and software architecture.",
-  "journey.date2": "Apr 2024 – Nov 2025",
-  "journey.t2": "Junior Support Analyst at GSW Software",
-  "journey.d2": "I handled support tickets and assisted users, diagnosing and solving incidents involving systems, access and equipment. I also documented solutions in the knowledge base and escalated issues to the development team when needed. This is where I learned to prioritize requests, communicate clearly and deeply understand how systems work day to day.",
-  "journey.date3": "Dec 2025 – today",
-  "journey.t3": "Mid-level Infrastructure & Support Analyst at GSW Software",
-  "journey.d3": "I was promoted to mid-level analyst and today I work with artificial intelligence, integrations with in-house systems, security, infrastructure and scalability.",
+  "journey.subtitle": "The projects that brought me here",
 
   "projects.title": "My projects",
   "projects.subtitle": "What I built, with whom and what I learned in each one",
@@ -57,6 +48,7 @@ window.I18N_EN = {
   /* textos usados pelo JS dos projetos */
   "ui.project": "Project",
   "ui.repo": "View repository",
+  "ui.viewProject": "View project",
   "ui.role": "My role",
   "ui.partner": "Partner",
   "ui.challenge": "The challenge",
@@ -73,6 +65,7 @@ window.I18N_EN = {
 window.I18N_PT_UI = {
   "ui.project": "Projeto",
   "ui.repo": "Ver repositório",
+  "ui.viewProject": "Ver projeto",
   "ui.role": "Meu papel",
   "ui.partner": "Parceiro",
   "ui.challenge": "O desafio",

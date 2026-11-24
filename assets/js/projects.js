@@ -7,11 +7,13 @@
      fit    → "cover" (preenche, padrão) ou "contain" (mostra inteira: banners e diagramas)
      poster → imagem exibida antes de o vídeo carregar
    repo: deixe "" para esconder o botão "Ver repositório".
+   summary: resumo de uma frase, usado na linha do tempo ("Minha trajetória").
    ========================================================= */
 window.PROJECTS = [
   /* ---------------------------------------------------- 6º semestre */
   {
     tab: "Índice",
+    summary: { pt: "Plataforma de inteligência documental com IA para a Akaer. Integrei ao front-end as sugestões automáticas de metadados geradas pela IA.", en: "AI-powered document intelligence platform for Akaer. I integrated the AI-generated metadata suggestions into the front-end." },
     period: { pt: "6º semestre · 2026", en: "6th semester · 2026" },
     name: { pt: "Índice — Plataforma de Inteligência Documental", en: "Índice — Document Intelligence Platform" },
     role: { pt: "Desenvolvedor Full Stack", en: "Full Stack Developer" },
@@ -51,6 +53,7 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 5º semestre */
   {
     tab: "SCARS",
+    summary: { pt: "Solução de BI e Data Warehouse com a SIATT para acompanhar os custos estratégicos de projetos, com indicadores de saúde financeira.", en: "BI and Data Warehouse solution with SIATT to track strategic project costs, with financial health indicators." },
     period: { pt: "5º semestre · 2026", en: "5th semester · 2026" },
     name: { pt: "SCARS — Sistema de Controle e Acompanhamento de Recursos", en: "SCARS — Resource Control and Tracking System" },
     role: { pt: "Desenvolvedor (Dados e BI)", en: "Developer (Data & BI)" },
@@ -90,6 +93,7 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 4º semestre */
   {
     tab: "Tráfegou!",
+    summary: { pt: "Monitoramento de tráfego em tempo real com Vue.js, Spring Boot e Oracle. Atuei em autenticação, segurança da API e CRUDs.", en: "Real-time traffic monitoring with Vue.js, Spring Boot and Oracle. I worked on authentication, API security and CRUDs." },
     period: { pt: "4º semestre · 2025", en: "4th semester · 2025" },
     name: { pt: "Tráfegou! — Monitoramento de Tráfego Inteligente", en: "Tráfegou! — Smart Traffic Monitoring" },
     role: { pt: "Desenvolvedor Full Stack", en: "Full Stack Developer" },
@@ -128,6 +132,7 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 3º semestre */
   {
     tab: "Pontual",
+    summary: { pt: "Controle de acesso de funcionários externos para a Altave. Meu foco foi a modelagem do banco com Supabase e PostgreSQL.", en: "Access control for external employees, built for Altave. My focus was database design with Supabase and PostgreSQL." },
     period: { pt: "3º semestre · 2025", en: "3rd semester · 2025" },
     name: "Pontual",
     role: { pt: "Desenvolvedor Full Stack", en: "Full Stack Developer" },
@@ -167,6 +172,7 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 2º semestre */
   {
     tab: "PACER",
+    summary: { pt: "Aplicação desktop em Java e MySQL para avaliação de integrantes de grupos, em que atuei como Product Owner.", en: "Java and MySQL desktop app for peer assessment within teams, where I was the Product Owner." },
     period: { pt: "2º semestre · 2024", en: "2nd semester · 2024" },
     name: "PACER Assessment System",
     role: "Product Owner",
@@ -205,6 +211,7 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 1º semestre */
   {
     tab: { pt: "Calculadora", en: "Calculator" },
+    summary: { pt: "Meu primeiro projeto na Fatec: uma calculadora científica de terminal, criada em VisualG e evoluída para TypeScript.", en: "My first project at Fatec: a terminal scientific calculator, built in VisualG and later evolved to TypeScript." },
     period: { pt: "1º semestre · 2024", en: "1st semester · 2024" },
     name: { pt: "Calculadora Científica", en: "Scientific Calculator" },
     role: { pt: "Desenvolvedor", en: "Developer" },
