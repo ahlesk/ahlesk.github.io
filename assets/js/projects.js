@@ -25,8 +25,8 @@ window.PROJECTS = [
       pt: "Atuei no front-end da funcionalidade de <strong>sugestões automáticas de metadados por IA</strong>: apliquei as sugestões nos formulários, criei indicadores visuais para os campos preenchidos automaticamente e tratei a edição manual, removendo o indicador quando o usuário altera o campo. Identifiquei e corrigi uma <strong>condição de concorrência</strong> entre o carregamento das sugestões e dos catálogos de dados, e participei dos testes automatizados e de integração.",
       en: "I worked on the front-end of the <strong>AI-driven metadata suggestions</strong> feature: applied suggestions to the forms, built visual indicators for auto-filled fields and handled manual editing, removing the indicator when the user changes a field. I found and fixed a <strong>race condition</strong> between loading the suggestions and the data catalogues, and took part in automated and integration testing."
     },
-    media: { src: "" },
-    caption: { pt: "[Adicione aqui um print ou GIF da plataforma]", en: "[Add a screenshot or GIF of the platform here]" },
+    media: { src: "assets/img/projects/indice.gif", fit: "cover" },
+    caption: { pt: "Índice: suba o arquivo, a IA classifica", en: "Índice: upload the file, AI classifies it" },
     techs: [
       { name: { pt: "Inteligência Artificial", en: "Artificial Intelligence" }, use: { pt: "análise e classificação de documentos técnicos", en: "analysis and classification of technical documents" } },
       { name: "Groq (LLMs)", use: { pt: "geração das sugestões de título, descrição e categorias", en: "generating title, description and category suggestions" } },
@@ -64,8 +64,8 @@ window.PROJECTS = [
       pt: "Atuei na construção da solução analítica e na <strong>estruturação dos dados</strong>: organização e consolidação das informações para análises históricas e multidimensionais, e definição e implementação dos <strong>indicadores financeiros</strong> — orçamento estimado, custo real, percentual de desvio e classificação da saúde financeira dos projetos — para identificar riscos de estouro de orçamento e apoiar a tomada de decisão.",
       en: "I worked on building the analytical solution and <strong>structuring the data</strong>: organizing and consolidating information for historical and multidimensional analysis, and defining and implementing the <strong>financial KPIs</strong> — estimated budget, actual cost, deviation percentage and project financial health — to spot budget overrun risks and support decision-making."
     },
-    media: { src: "assets/img/projects/scars.jpg", fit: "cover" },
-    caption: { pt: "Dashboard de custos por programa, projeto e período", en: "Cost dashboard by program, project and period" },
+    media: { src: "assets/img/projects/scars.gif", fit: "cover" },
+    caption: { pt: "SCARS: custos consolidados em um dashboard por programa, projeto e período", en: "SCARS: costs consolidated in a dashboard by program, project and period" },
     techs: [
       { name: "Data Warehouse", use: { pt: "consolidação de dados de várias fontes para análises históricas", en: "consolidating multi-source data for historical analysis" } },
       { name: { pt: "Modelagem de dados", en: "Data modeling" }, use: { pt: "dimensões de materiais, colaboradores, projetos e programas", en: "dimensions for materials, staff, projects and programs" } },
