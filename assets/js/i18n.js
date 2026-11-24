@@ -12,15 +12,15 @@ window.I18N_EN = {
 
   "hero.kicker": "hello, world",
   "hero.title1": "I'm",
-  "hero.subtitle": "[Current role] at [Company] · [Course] student at [Institution]",
+  "hero.subtitle": "Infrastructure & Support Analyst at GSW Software · Database student at Fatec Prof. Jessen Vidal",
   "hero.cta1": "Read my story",
   "hero.cta2": "See projects",
 
   "about.title": "About me",
   "about.subtitle": "Who I am, what drives me and where I am today",
-  "about.p1": "I'm <strong>[Your Name]</strong>, a developer from [city]. I started programming when [how or why you started] and, since then, what motivates me most is [what makes you enjoy building software].",
-  "about.p2": "Outside of code, I enjoy [hobbies and interests]. I think that shows in the way I work: [a trait of yours, like curiosity, organization or learning together].",
-  "about.p3": "Today I study <strong>[Course]</strong> at [Institution] and work as <strong>[Role]</strong> at [Company], where [what you do day to day and what you've been learning].",
+  "about.p1": "I'm <strong>Alexander Silva Lima</strong>, born in Belo Horizonte, Minas Gerais. I've always been passionate about technology: it has been part of my whole life and, as I grew up, my fondness for computing only grew.",
+  "about.p2": "When I started my academic life, that connection grew stronger. I graduated as a technician from <strong>ETEC São José dos Campos</strong>, which took me one step closer to Fatec. Along the way, I learned about systems development, programming, databases and software architecture.",
+  "about.p3": "Today I study <strong>Databases</strong> at Fatec Prof. Jessen Vidal and work as an <strong>Infrastructure & Support Analyst</strong> at GSW Software, where I work with artificial intelligence, integrations with in-house systems, security, infrastructure and scalability.",
 
   "skills.lang": "Languages",
   "skills.back": "Back-end & data",
@@ -28,7 +28,7 @@ window.I18N_EN = {
 
   "journey.title": "My journey",
   "journey.subtitle": "The moments that brought me here",
-  "journey.t1": "Starting at [Institution]",
+  "journey.t1": "Starting at Fatec Prof. Jessen Vidal",
   "journey.d1": "[What it was like to start the course: expectations, first classes, the first real contact with programming.]",
   "journey.t2": "[Teaching assistant, research or first project]",
   "journey.d2": "[What you did, who you helped and what you learned by teaching or researching.]",
@@ -36,7 +36,7 @@ window.I18N_EN = {
   "journey.t3": "[Extracurricular activity]",
   "journey.d3": "[Sports club, student union, study group, hackathon: what it added to your education.]",
   "journey.date4": "[year – today]",
-  "journey.t4": "[Role] at [Company]",
+  "journey.t4": "Infrastructure & Support Analyst at GSW Software",
   "journey.d4": "[How you got the job, what you do today and what you've been learning.]",
 
   "projects.title": "My projects",

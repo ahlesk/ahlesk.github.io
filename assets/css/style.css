@@ -386,6 +386,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .hero__cta .btn, .contact__cta .btn { width: 100%; }
   .btn { padding: 14px 22px; }
   .timeline__item { grid-template-columns: 38px 1fr; }
+  .brand__name { font-size: 19px; }
+  .brand__role { font-size: 11px; }
   .timeline__title { font-size: 20px; }
   .tab { padding: 10px 14px 8px; font-size: 12px; }
   .about__text { font-size: 17px; }
