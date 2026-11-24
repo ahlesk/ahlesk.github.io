@@ -230,6 +230,7 @@
   });
 
   /* ---------------- Botões magnéticos ---------------- */
+  function clamp(v, max) { return Math.max(-max, Math.min(max, v)); }
   function bindMagnetic(scope) {
     if (!animate || !finePointer) return;
     $$(".magnetic", scope).forEach(function (el) {
@@ -238,8 +239,8 @@
       var yTo = gsap.quickTo(el, "y", { duration: .4, ease: "power3.out" });
       el.addEventListener("mousemove", function (e) {
         var r = el.getBoundingClientRect();
-        xTo((e.clientX - r.left - r.width / 2) * .25);
-        yTo((e.clientY - r.top - r.height / 2) * .35);
+        xTo(clamp((e.clientX - r.left - r.width / 2) * .15, 10));   // máx. 10px para não encostar no vizinho
+        yTo(clamp((e.clientY - r.top - r.height / 2) * .3, 6));
       });
       el.addEventListener("mouseleave", function () { xTo(0); yTo(0); });
     });
