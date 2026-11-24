@@ -401,7 +401,7 @@
     var intro = gsap.timeline({ defaults: { ease: "power4.out" } });
     intro
       .fromTo(".header", { yPercent: -100 }, { yPercent: 0, duration: .9, clearProps: "transform" })
-      .fromTo(".hero__photo", { scale: 1.25, autoAlpha: 0 }, { scale: 1.08, autoAlpha: .35, duration: 2, ease: "power2.out" }, 0)
+      .fromTo(".hero__photo", { scale: 1.25, autoAlpha: 0 }, { scale: 1.08, autoAlpha: .5, duration: 2, ease: "power2.out" }, 0)
       .fromTo(".hero__kicker", { autoAlpha: 0, x: -20 }, { autoAlpha: 1, x: 0, duration: .6, onStart: typeKicker }, .3)
       .fromTo(".line__inner", { yPercent: 110, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 1.1, stagger: .12 }, .5)
       .fromTo(".hero__subtitle", { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: .8 }, .95)
@@ -469,8 +469,8 @@
     });
 
     // Contato: parallax da foto de fundo
-    gsap.fromTo(".contact__bg img", { yPercent: -60 }, {
-      yPercent: -40, ease: "none",
+    gsap.fromTo(".contact__bg img", { yPercent: -8 }, {
+      yPercent: 8, ease: "none",
       scrollTrigger: { trigger: ".contact", start: "top bottom", end: "bottom top", scrub: true }
     });
 
