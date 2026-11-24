@@ -348,12 +348,12 @@
         if (dist < 120) { d.x += dx / dist * .8; d.y += dy / dist * .8; }
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(127,179,38," + d.a + ")";
+        ctx.fillStyle = "rgba(79, 208, 234," + d.a + ")";
         ctx.fill();
         for (var j = i + 1; j < dots.length; j++) {
           var e = dots[j], ex = d.x - e.x, ey = d.y - e.y, dd = ex * ex + ey * ey;
           if (dd < 9000) {
-            ctx.strokeStyle = "rgba(107,154,31," + (0.12 * (1 - dd / 9000)) + ")";
+            ctx.strokeStyle = "rgba(34, 184, 214," + (0.12 * (1 - dd / 9000)) + ")";
             ctx.lineWidth = 1;
             ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(e.x, e.y); ctx.stroke();
           }
