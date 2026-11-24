@@ -134,15 +134,19 @@
       var sel = i === current;
       return '<button type="button" class="tab" role="tab" id="tab-' + i + '" aria-controls="project-panel"' +
         ' aria-selected="' + sel + '" tabindex="' + (sel ? 0 : -1) + '" data-i="' + i + '">' +
-        esc(t("ui.project")) + " " + (i + 1) + "</button>";
+        esc(p.tab ? tv(p.tab) : t("ui.project") + " " + (i + 1)) + "</button>";
     }).join("");
   }
 
   function mediaHTML(p) {
-    var src = p.media;
-    if (!src) return '<div class="media__ph">' + icoPlay + "<span>" + esc(t("ui.media")) + "</span></div>";
-    if (/\.(mp4|webm)$/i.test(src)) return '<video src="' + esc(src) + '" autoplay muted loop playsinline></video>';
-    return '<img src="' + esc(src) + '" alt="' + esc(tv(p.caption)) + '" loading="lazy">';
+    var m = typeof p.media === "string" ? { src: p.media } : (p.media || {});
+    if (!m.src) return '<div class="media__ph">' + icoPlay + "<span>" + esc(t("ui.media")) + "</span></div>";
+    var style = ' style="object-fit:' + (m.fit === "contain" ? "contain" : "cover") + '"';
+    if (/\.(mp4|webm)$/i.test(m.src)) {
+      return '<video src="' + esc(m.src) + '"' + (m.poster ? ' poster="' + esc(m.poster) + '"' : "") + style +
+        ' autoplay muted loop playsinline preload="metadata" aria-label="' + esc(tv(p.caption)) + '"></video>';
+    }
+    return '<img src="' + esc(m.src) + '" alt="' + esc(tv(p.caption)) + '"' + style + ' loading="lazy" decoding="async">';
   }
 
   function accHTML(list, prefix) {
@@ -159,13 +163,15 @@
     return '<div class="project__top">' +
         '<div><span class="project__date mono" data-anim>' + esc(tv(p.period)) + "</span>" +
         '<h3 class="project__name" data-anim>' + esc(tv(p.name)) + "</h3>" +
-        '<p class="project__role" data-anim>' + esc(t("ui.role")) + ": <strong>" + esc(tv(p.role)) + "</strong></p></div>" +
-        '<a class="btn btn--outline project__repo magnetic" data-anim href="' + esc(p.repo || "#") + '" target="_blank" rel="noopener">' + icoCode + esc(t("ui.repo")) + "</a>" +
+        '<p class="project__role" data-anim>' + esc(t("ui.role")) + ": <strong>" + esc(tv(p.role)) + "</strong>" +
+        (p.partner ? ' <span class="project__sep">·</span> ' + esc(t("ui.partner")) + ": <strong>" + esc(tv(p.partner)) + "</strong>" : "") + "</p></div>" +
+        (p.repo ? '<a class="btn btn--outline project__repo magnetic" data-anim href="' + esc(p.repo) + '" target="_blank" rel="noopener">' + icoCode + esc(t("ui.repo")) + "</a>" : "") +
       "</div>" +
       '<div class="project__grid">' +
         '<div class="project__copy" data-anim><h4>' + esc(t("ui.challenge")) + "</h4><p>" + tv(p.challenge) + "</p>" +
         "<h4>" + esc(t("ui.contrib")) + "</h4><p>" + tv(p.contributions) + "</p></div>" +
-        '<figure style="margin:0" data-anim><div class="media">' + mediaHTML(p) + '</div><figcaption class="media-caption">' + esc(tv(p.caption)) + "</figcaption></figure>" +
+        '<figure style="margin:0" data-anim><div class="media' + (p.media && p.media.fit === "contain" ? " media--contain" : "") + '"' +
+        (p.media && p.media.bg ? ' style="background:' + esc(p.media.bg) + '"' : "") + ">" + mediaHTML(p) + '</div><figcaption class="media-caption">' + esc(tv(p.caption)) + "</figcaption></figure>" +
       "</div>" +
       "<h4 data-anim>" + esc(t("ui.tech")) + "</h4>" +
       '<ul class="techs">' + (p.techs || []).map(function (x) {
