@@ -76,27 +76,39 @@ main:focus { outline: none; }
 }
 @media (hover: hover) and (pointer: fine) { .cursor-glow.is-on { opacity: 1; } }
 
-/* ---------- Botões ---------- */
+/* ---------- Botões ----------
+   Todos os botões (.btn, abas dos projetos e PT/EN) seguem o mesmo padrão:
+   começam só com a borda, se preenchem da esquerda para a direita no hover
+   e ganham um brilho borrado na cor de destaque. */
+:root { --glow: 0 0 26px 2px rgba(34, 184, 214, .45), 0 10px 32px -10px rgba(34, 184, 214, .7); }
+.btn, .tab, .lang__btn {
+  position: relative; overflow: hidden; isolation: isolate;
+  transition: color .35s var(--ease), border-color .35s var(--ease), box-shadow .45s var(--ease);
+}
+.btn::before, .tab::before, .lang__btn::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--accent); transform: scaleX(0); transform-origin: right;
+  transition: transform .45s var(--ease);
+}
+.btn:hover::before, .btn:focus-visible::before,
+.tab:hover::before, .tab:focus-visible::before, .tab[aria-selected="true"]::before,
+.lang__btn:hover::before, .lang__btn:focus-visible::before, .lang__btn.is-active::before {
+  transform: scaleX(1); transform-origin: left;
+}
+.btn:hover, .btn:focus-visible,
+.tab:hover, .tab:focus-visible,
+.lang__btn:hover, .lang__btn:focus-visible { color: var(--accent-ink); border-color: var(--accent); box-shadow: var(--glow); }
+
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 54px; padding: 14px 34px;
   font-size: 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; line-height: 1;
   border: 1px solid var(--accent); border-radius: var(--radius);
-  position: relative; overflow: hidden; isolation: isolate;
-  transition: color .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+  color: var(--accent); background: transparent;
   will-change: transform;
 }
-.btn::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: var(--accent); transform: scaleX(0); transform-origin: right;
-  transition: transform .45s var(--ease);
-}
-.btn--solid { background: var(--accent); color: var(--accent-ink); }
-.btn--solid::before { background: var(--accent-hover); }
-.btn--outline { color: var(--accent); background: transparent; }
-.btn:hover::before, .btn:focus-visible::before { transform: scaleX(1); transform-origin: left; }
-.btn--outline:hover, .btn--outline:focus-visible { color: var(--accent-ink); }
-.btn:hover { box-shadow: 0 10px 30px -12px rgba(34, 184, 214, .65); }
+/* .btn--solid e .btn--outline agora têm o mesmo comportamento; as classes ficam por compatibilidade */
+.btn--solid, .btn--outline { color: var(--accent); background: transparent; }
 .btn--icon { min-height: 52px; padding: 12px 22px; font-size: 13px; }
 
 /* ---------- Header ---------- */
@@ -129,10 +141,8 @@ main:focus { outline: none; }
 .lang { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); }
 .lang__btn {
   width: 44px; height: 36px; font-size: 14px; font-weight: 700; letter-spacing: .06em; color: var(--text);
-  transition: background .25s, color .25s;
 }
-.lang__btn.is-active { background: var(--accent); color: var(--accent-ink); }
-.lang__btn:not(.is-active):hover { color: var(--accent); }
+.lang__btn.is-active { color: var(--accent-ink); }
 
 .burger { display: none; width: 42px; height: 42px; position: relative; }
 .burger span {
@@ -262,10 +272,8 @@ main:focus { outline: none; }
 .tab {
   min-height: 44px; padding: 12px 22px 10px; border: 1px solid var(--line-strong); border-radius: var(--radius);
   font-size: 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-  transition: background .3s, color .3s, border-color .3s;
 }
-.tab:hover { border-color: var(--accent); color: var(--accent); }
-.tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.tab[aria-selected="true"] { border-color: var(--accent); color: var(--accent-ink); }
 
 .project-wrap { perspective: 1400px; }
 .project {
