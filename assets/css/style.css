@@ -26,7 +26,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+/* sem scroll-behavior: smooth — ele quebra as medições do ScrollTrigger; a rolagem suave é feita no JS */
+html { scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg-black);
@@ -46,6 +47,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+main:focus { outline: none; }
 
 .mono { font-family: var(--mono); }
 .accent { color: var(--accent); }
@@ -171,6 +173,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__content { position: relative; z-index: 2; }
 .hero__kicker { color: var(--accent); font-size: 18px; margin-bottom: 18px; min-height: 1.6em; }
 .caret { display: inline-block; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+.caret.is-typing { animation: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 @keyframes blink { 50% { opacity: 0; } }
 .hero__title {
   font-size: clamp(44px, 7vw, 72px); letter-spacing: .04em; line-height: 1.05;

@@ -72,6 +72,21 @@
   $$("a", nav).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
+  /* ---------------- Rolagem suave nos links internos ---------------- */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var id = a.getAttribute("href").slice(1);
+    var target = id ? document.getElementById(id) : null;
+    if (!target) return;
+    e.preventDefault();
+    var offset = id === "inicio" ? 0 : $("#header").offsetHeight;
+    var top = id === "inicio" ? 0 : target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? "auto" : "smooth" });
+    if (history.pushState) history.pushState(null, "", "#" + id);
+    if (id === "main") target.focus({ preventScroll: true });
+  });
+
   /* ---------------- Header / progresso / nav ativa ---------------- */
   var header = $("#header");
   var progress = $(".progress");
@@ -231,18 +246,65 @@
   }
 
   /* ---------------- Digitação do "> olá, mundo" ---------------- */
+  // Digita, pausa, apaga e digita o próximo "olá, mundo" — em loop.
+  // A primeira saudação é sempre a do idioma escolhido (PT/EN).
+  var GREETINGS = [
+    { text: "olá, mundo", lang: "pt" },
+    { text: "hello, world", lang: "en" },
+    { text: "hola, mundo", lang: "es" },
+    { text: "bonjour, le monde", lang: "fr" },
+    { text: "hallo, welt", lang: "de" },
+    { text: "ciao, mondo", lang: "it" },
+    { text: "こんにちは、世界", lang: "ja" },
+    { text: "привет, мир", lang: "ru" },
+    { text: "你好，世界", lang: "zh" },
+    { text: "merhaba, dünya", lang: "tr" },
+    { text: "안녕, 세상", lang: "ko" },
+    { text: "hej, världen", lang: "sv" },
+    { text: "γεια σου, κόσμε", lang: "el" },
+    { text: "नमस्ते, दुनिया", lang: "hi" }
+  ];
   var typedEl = $(".typed");
+  var caretEl = $(".caret");
   var typeTimer = null;
+  var segmenter = window.Intl && Intl.Segmenter ? new Intl.Segmenter(undefined, { granularity: "grapheme" }) : null;
+  function chars(s) {
+    // separa por grafemas, para acentos e escritas como o hindi não quebrarem
+    return segmenter ? Array.from(segmenter.segment(s), function (x) { return x.segment; }) : Array.from(s);
+  }
+
   function typeKicker() {
-    var full = t("hero.kicker");
-    clearInterval(typeTimer);
-    if (!animate) { typedEl.textContent = full; return; }
-    var i = 0;
+    clearTimeout(typeTimer);
+    var first = t("hero.kicker");
+    if (!animate) { typedEl.textContent = first; return; }
+
+    var list = [{ text: first, lang: lang }].concat(GREETINGS.filter(function (g) { return g.lang !== lang; }));
+    var idx = 0, pos = 0, deleting = false, parts = chars(list[0].text);
     typedEl.textContent = "";
-    typeTimer = setInterval(function () {
-      typedEl.textContent = full.slice(0, ++i);
-      if (i >= full.length) clearInterval(typeTimer);
-    }, 70);
+
+    function tick() {
+      var delay;
+      if (!deleting) {
+        pos++;
+        delay = 70 + Math.random() * 70;              // ritmo de digitação "humano"
+        if (pos >= parts.length) { deleting = true; delay = 2200; } // pausa com a frase completa
+      } else {
+        pos--;
+        delay = 35;                                   // apagar é mais rápido
+        if (pos <= 0) {
+          deleting = false;
+          idx = (idx + 1) % list.length;
+          parts = chars(list[idx].text);
+          delay = 450;                                // pausa com o campo vazio
+        }
+      }
+      typedEl.textContent = parts.slice(0, pos).join("");
+      typedEl.setAttribute("lang", list[idx].lang);
+      // cursor fica sólido enquanto digita/apaga e pisca nas pausas
+      caretEl.classList.toggle("is-typing", delay < 400);
+      typeTimer = setTimeout(tick, delay);
+    }
+    typeTimer = setTimeout(tick, 300);
   }
 
   /* ---------------- Partículas do hero ---------------- */
@@ -345,15 +407,11 @@
       .fromTo(".hero__cta", { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: .8 }, 1.1)
       .fromTo(".hero__scroll", { autoAlpha: 0 }, { autoAlpha: 1, duration: .8 }, 1.4);
 
-    // Parallax do hero ao rolar
-    gsap.to(".hero__content", {
-      yPercent: 30, autoAlpha: .2, ease: "none",
-      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
-    });
-    gsap.to(".hero__photo", {
-      yPercent: 12, ease: "none",
-      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
-    });
+    // Parallax do hero ao rolar — valores explícitos: no topo da página
+    // o conteúdo SEMPRE volta a opacidade 1 e posição 0
+    var heroST = { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, invalidateOnRefresh: true };
+    gsap.fromTo(".hero__content", { yPercent: 0, opacity: 1 }, { yPercent: 30, opacity: .2, ease: "none", immediateRender: false, scrollTrigger: heroST });
+    gsap.fromTo(".hero__bg", { yPercent: 0, opacity: 1 }, { yPercent: 12, opacity: .5, ease: "none", immediateRender: false, scrollTrigger: Object.assign({}, heroST) });
 
     // Reveals genéricos
     ScrollTrigger.batch(".reveal", {
