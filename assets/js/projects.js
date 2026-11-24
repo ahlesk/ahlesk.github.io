@@ -102,8 +102,8 @@ window.PROJECTS = [
       pt: "Atuei no front-end e no back-end, principalmente em <strong>autenticação de usuários</strong>, dashboard administrativo, <strong>CRUDs de usuários e cargos</strong>, configuração de segurança da API e integração entre front-end, back-end e banco de dados. Também participei da ingestão, tratamento e visualização dos dados usados no monitoramento.",
       en: "I worked on both front-end and back-end, mainly on <strong>user authentication</strong>, the admin dashboard, <strong>user and role CRUDs</strong>, API security configuration and integration between front-end, back-end and database. I also took part in ingesting, processing and visualizing the monitoring data."
     },
-    media: { src: "assets/img/projects/trafegou.mp4", poster: "assets/img/projects/trafegou-poster.jpg", fit: "cover" },
-    caption: { pt: "Mapa de São José dos Campos com o nível de trânsito por região", en: "São José dos Campos map with traffic level by region" },
+    media: { src: "assets/img/projects/trafegou.gif", fit: "cover" },
+    caption: { pt: "Tráfegou!: nível de trânsito por região de São José dos Campos, em tempo real", en: "Tráfegou!: real-time traffic level by region of São José dos Campos" },
     techs: [
       { name: "Spring Boot", use: { pt: "API REST, regras de negócio e segurança", en: "REST API, business rules and security" } },
       { name: "Oracle Database", use: { pt: "usuários, regiões monitoradas e protocolos", en: "users, monitored regions and protocols" } },
