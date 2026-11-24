@@ -221,6 +221,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: border-color .25s, color .25s, background .25s;
 }
 .chips li:hover { border-color: var(--accent); color: var(--accent); background: rgba(107, 154, 31, .07); }
+.chips li:has(.ico) { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 4px 10px; }
+.chips .ico {
+  width: 16px; height: 16px; flex-shrink: 0; color: #fff; margin-top: -2px;
+  transition: transform .35s var(--ease);
+}
+.chips li:hover .ico { transform: translateY(-2px) scale(1.12); }
 
 /* ---------- Timeline ---------- */
 .timeline { position: relative; max-width: 960px; margin: 0 auto; }
@@ -245,12 +251,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .timeline__date { color: var(--accent); font-size: 14px; display: block; }
 .timeline__title { font-size: 23px; letter-spacing: .05em; margin: 6px 0 14px; }
 .timeline__body p { color: #cfcfcf; font-size: 16px; margin: 0; }
-.file-link {
-  display: inline-flex; align-items: center; gap: 12px; margin-top: 22px;
-  padding: 16px 20px; background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 3px; font-size: 15px;
-  transition: border-color .3s, transform .3s var(--ease);
-}
-.file-link:hover { border-color: var(--accent); transform: translateX(4px); }
 
 /* ---------- Projetos ---------- */
 .tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -14px 0 36px; }

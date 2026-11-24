@@ -24,6 +24,7 @@ assets/img/             fotos
 - **Projetos:** `assets/js/projects.js` (nome, papel, desafio, mídia, tecnologias, skills).
 - **Fotos:** substitua `assets/img/profile.jpg` (proporção ~ 2:3).
 - **Links:** GitHub, LinkedIn e e-mail (`mailto:`) no `index.html`.
+- **Ícones das skills:** ficam num sprite SVG no início do `<body>` (`<symbol id="i-...">`). Para usar um ícone, escreva `<svg class="ico"><use href="#i-nome"/></svg>`. Para adicionar outro, copie o SVG de [Simple Icons](https://simpleicons.org) e cole como um novo `<symbol>`, sem atributos `fill`.
 
 ## Rodando localmente
 
