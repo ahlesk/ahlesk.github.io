@@ -13,7 +13,7 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 6º semestre */
   {
     tab: "Índice",
-    summary: { pt: "Plataforma de inteligência documental com IA para a Akaer. Integrei ao front-end as sugestões automáticas de metadados geradas pela IA.", en: "AI-powered document intelligence platform for Akaer. I integrated the AI-generated metadata suggestions into the front-end." },
+    summary: { pt: "Plataforma de inteligência documental com IA para a Akaer. Atuei no back-end, com os endpoints de sugestões e o processamento de documentos, e no front-end das sugestões automáticas de metadados.", en: "AI-powered document intelligence platform for Akaer. I worked on the back-end, building the suggestion endpoints and document processing, and on the front-end of the automatic metadata suggestions." },
     period: { pt: "6º semestre · 2026", en: "6th semester · 2026" },
     name: { pt: "Índice — Plataforma de Inteligência Documental", en: "Índice — Document Intelligence Platform" },
     role: { pt: "Desenvolvedor Full Stack", en: "Full Stack Developer" },
@@ -24,8 +24,8 @@ window.PROJECTS = [
       en: "A document intelligence solution built in partnership with <strong>Akaer</strong>, a reference in the aerospace, defense and industrial sectors. The platform uses <strong>Artificial Intelligence</strong> to analyze and classify technical documents, suggesting metadata such as title, description, project, discipline, document type and related areas — reducing manual cataloguing work and the errors that come with it. Users review, edit and apply the suggestions before saving them."
     },
     contributions: {
-      pt: "Atuei no front-end da funcionalidade de <strong>sugestões automáticas de metadados por IA</strong>: apliquei as sugestões nos formulários, criei indicadores visuais para os campos preenchidos automaticamente e tratei a edição manual, removendo o indicador quando o usuário altera o campo. Identifiquei e corrigi uma <strong>condição de concorrência</strong> entre o carregamento das sugestões e dos catálogos de dados, e participei dos testes automatizados e de integração.",
-      en: "I worked on the front-end of the <strong>AI-driven metadata suggestions</strong> feature: applied suggestions to the forms, built visual indicators for auto-filled fields and handled manual editing, removing the indicator when the user changes a field. I found and fixed a <strong>race condition</strong> between loading the suggestions and the data catalogues, and took part in automated and integration testing."
+      pt: "Atuei de ponta a ponta na funcionalidade de <strong>sugestões automáticas de metadados por IA</strong>. No <strong>back-end</strong>, desenvolvi os <strong>endpoints REST de sugestões</strong> consumidos pela interface e atuei no <strong>processamento dos documentos técnicos</strong> que alimenta a classificação pela IA. No <strong>front-end</strong>, apliquei as sugestões nos formulários, criei indicadores visuais para os campos preenchidos automaticamente e tratei a edição manual, removendo o indicador quando o usuário altera o campo. Também identifiquei e corrigi uma <strong>condição de concorrência</strong> entre o carregamento das sugestões e dos catálogos de dados, e participei dos testes automatizados e de integração.",
+      en: "I worked end to end on the <strong>AI-driven metadata suggestions</strong> feature. On the <strong>back-end</strong>, I built the <strong>REST suggestion endpoints</strong> consumed by the interface and worked on the <strong>technical document processing</strong> that feeds the AI classification. On the <strong>front-end</strong>, I applied suggestions to the forms, built visual indicators for auto-filled fields and handled manual editing, removing the indicator when the user changes a field. I also found and fixed a <strong>race condition</strong> between loading the suggestions and the data catalogues, and took part in automated and integration testing."
     },
     media: { src: "assets/img/projects/indice.gif", fit: "cover" },
     caption: { pt: "Índice: suba o arquivo, a IA classifica", en: "Índice: upload the file, AI classifies it" },
@@ -33,18 +33,20 @@ window.PROJECTS = [
       { name: { pt: "Inteligência Artificial", en: "Artificial Intelligence" }, use: { pt: "análise e classificação de documentos técnicos", en: "analysis and classification of technical documents" } },
       { name: "Groq (LLMs)", use: { pt: "geração das sugestões de título, descrição e categorias", en: "generating title, description and category suggestions" } },
       { name: "Vue.js", use: { pt: "interfaces e formulários de gestão documental", en: "document management interfaces and forms" } },
-      { name: "APIs REST", use: { pt: "integração do front-end com os serviços de IA", en: "integrating the front-end with the AI services" } },
+      { name: "APIs REST", use: { pt: "endpoints de sugestões no back-end, consumidos pelo front-end", en: "suggestion endpoints on the back-end, consumed by the front-end" } },
       { name: { pt: "Testes automatizados", en: "Automated tests" }, use: { pt: "validação de sugestões, indicadores e falhas", en: "validating suggestions, indicators and failures" } },
       { name: "Git e GitHub", use: { pt: "branches, Pull Requests e revisão de código", en: "branches, Pull Requests and code review" } }
     ],
     hard: [
+      { name: { pt: "Endpoints REST de sugestões", en: "REST suggestion endpoints" }, detail: { pt: "Desenvolvimento, no back-end, dos endpoints responsáveis por gerar e entregar ao front-end as sugestões de metadados por IA.", en: "Building the back-end endpoints that generate the AI metadata suggestions and deliver them to the front-end." } },
+      { name: { pt: "Processamento de documentos", en: "Document processing" }, detail: { pt: "Atuação nos serviços de processamento dos documentos técnicos, que preparam as informações usadas pela IA para classificar cada documento.", en: "Working on the technical document processing services, which prepare the information the AI uses to classify each document." } },
       { name: { pt: "Integração com IA e LLMs", en: "AI and LLM integration" }, detail: { pt: "Consumo dos endpoints que geram as sugestões por IA, aplicando as respostas nos formulários e tratando falhas, respostas nulas e indisponibilidade dos serviços.", en: "Consuming the endpoints that generate AI suggestions, applying the responses to the forms and handling failures, null responses and service downtime." } },
       { name: { pt: "Interfaces reativas com Vue.js", en: "Reactive interfaces with Vue.js" }, detail: { pt: "Formulários de cadastro e edição de documentos, indicadores visuais de campos sugeridos e gerenciamento dos estados de edição dos componentes.", en: "Document create/edit forms, visual indicators for suggested fields and management of component editing states." } },
       { name: { pt: "Operações assíncronas e concorrência", en: "Async operations and concurrency" }, detail: { pt: "Correção de uma condição de concorrência entre o carregamento das sugestões da IA e dos catálogos usados nos formulários, evitando inconsistências.", en: "Fixed a race condition between loading AI suggestions and the catalogues used by the forms, avoiding inconsistent data." } },
       { name: { pt: "Testes automatizados e de integração", en: "Automated and integration tests" }, detail: { pt: "Testes da aplicação das sugestões, da renderização dos indicadores, da edição manual e do comportamento dos componentes durante atualizações assíncronas.", en: "Tests for applying suggestions, rendering indicators, manual editing and component behavior during async updates." } }
     ],
     soft: [
-      { name: { pt: "Comunicação e colaboração", en: "Communication and collaboration" }, detail: { pt: "Alinhamento das funcionalidades do front-end com os serviços responsáveis pelo processamento de documentos e pela geração de sugestões por IA.", en: "Aligning front-end features with the services responsible for document processing and AI suggestions." } },
+      { name: { pt: "Comunicação e colaboração", en: "Communication and collaboration" }, detail: { pt: "Alinhamento entre o front-end, o back-end e os serviços responsáveis pelo processamento de documentos e pela geração de sugestões por IA.", en: "Aligning front-end, back-end and the services responsible for document processing and AI suggestions." } },
       { name: { pt: "Pensamento crítico e análise", en: "Critical thinking and analysis" }, detail: { pt: "Identificação de problemas de sincronização de dados, atualização de componentes e consistência das informações sugeridas automaticamente.", en: "Identifying issues with data synchronization, component updates and consistency of auto-suggested information." } },
       { name: { pt: "Autonomia e adaptabilidade", en: "Autonomy and adaptability" }, detail: { pt: "Proatividade na resolução de problemas e na melhoria da experiência do usuário, além da adaptação a novos conceitos como IA aplicada a aplicações web.", en: "Proactively solving problems and improving user experience, while adapting to new concepts such as AI applied to web apps." } }
     ]
@@ -172,18 +174,18 @@ window.PROJECTS = [
   /* ---------------------------------------------------- 2º semestre */
   {
     tab: "PACER",
-    summary: { pt: "Aplicação desktop em Java e MySQL para avaliação de integrantes de grupos, em que atuei como Product Owner.", en: "Java and MySQL desktop app for peer assessment within teams, where I was the Product Owner." },
+    summary: { pt: "Aplicação desktop em Java e MySQL para avaliação de integrantes de grupos, em que atuei como Scrum Master.", en: "Java and MySQL desktop app for peer assessment within teams, where I was the Scrum Master." },
     period: { pt: "2º semestre · 2024", en: "2nd semester · 2024" },
     name: "PACER Assessment System",
-    role: "Product Owner",
+    role: "Scrum Master",
     repo: "https://github.com/Steam-Ducks/pacer-assessment-system",
     challenge: {
       pt: "Aplicação desktop criada para tornar a <strong>avaliação de integrantes de grupos</strong> mais organizada, transparente e eficiente. O sistema oferece autenticação de usuários, gerenciamento de grupos, definição de critérios de avaliação, cadastro de sprints e geração de relatórios.",
       en: "A desktop application built to make <strong>peer assessment within teams</strong> more organized, transparent and efficient. It provides user authentication, group management, assessment criteria, sprint registration and report generation."
     },
     contributions: {
-      pt: "Atuei como <strong>Product Owner</strong>, organizando o produto, mantendo a documentação e acompanhando as entregas e os artefatos do projeto. Também participei da <strong>definição dos requisitos</strong> usados pela equipe durante o desenvolvimento.",
-      en: "I was the <strong>Product Owner</strong>, organizing the product, maintaining documentation and tracking deliveries and project artifacts. I also took part in <strong>defining the requirements</strong> the team used during development."
+      pt: "Atuei como <strong>Scrum Master</strong>, organizando as sprints e as tarefas da equipe no Jira, acompanhando as entregas e mantendo a documentação e os artefatos do projeto em dia. Também participei da <strong>definição dos requisitos</strong> usados pela equipe durante o desenvolvimento.",
+      en: "I was the <strong>Scrum Master</strong>, organizing the team's sprints and tasks in Jira, tracking deliveries and keeping the project documentation and artifacts up to date. I also took part in <strong>defining the requirements</strong> the team used during development."
     },
     media: { src: "assets/img/projects/pacer.jpg", fit: "contain", bg: "#172240" },
     caption: { pt: "Sistema de Avaliação PACER", en: "PACER Assessment System" },
@@ -202,7 +204,7 @@ window.PROJECTS = [
       { name: { pt: "Prototipação no Figma", en: "Prototyping in Figma" }, detail: { pt: "Protótipos das telas e organização do fluxo de navegação.", en: "Screen prototypes and navigation flow." } }
     ],
     soft: [
-      { name: { pt: "Comunicação e organização", en: "Communication and organization" }, detail: { pt: "Ponte entre o produto e a equipe, mantendo a documentação e os artefatos em dia.", en: "Bridging product and team, keeping documentation and artifacts up to date." } },
+      { name: { pt: "Comunicação e organização", en: "Communication and organization" }, detail: { pt: "Acompanhamento do andamento da equipe nas sprints, mantendo a documentação e os artefatos em dia.", en: "Following the team's progress through the sprints, keeping documentation and artifacts up to date." } },
       { name: { pt: "Colaboração em equipe", en: "Teamwork" }, detail: { pt: "Definição de requisitos em conjunto e acompanhamento das entregas.", en: "Defining requirements together and following up on deliveries." } },
       { name: { pt: "Autonomia e proatividade", en: "Autonomy and proactivity" }, detail: { pt: "Acompanhamento ativo das atividades e da documentação do sistema.", en: "Actively tracking activities and system documentation." } }
     ]
