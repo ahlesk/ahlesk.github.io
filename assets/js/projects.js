@@ -14,7 +14,7 @@ window.PROJECTS = [
     tab: "Índice",
     period: { pt: "6º semestre · 2026", en: "6th semester · 2026" },
     name: { pt: "Índice — Plataforma de Inteligência Documental", en: "Índice — Document Intelligence Platform" },
-    role: { pt: "Desenvolvedor Front-end", en: "Front-end Developer" },
+    role: { pt: "Desenvolvedor Full Stack", en: "Full Stack Developer" },
     partner: "Akaer",
     repo: "",
     challenge: {
