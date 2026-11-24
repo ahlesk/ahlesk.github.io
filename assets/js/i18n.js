@@ -33,7 +33,7 @@ window.I18N_EN = {
   "journey.d1": "I enrolled in the Database course, where I've been deepening my knowledge of systems development, programming, databases and software architecture.",
   "journey.date2": "Apr 2024 – Nov 2025",
   "journey.t2": "Junior Support Analyst at GSW Software",
-  "journey.d2": "[What you did in support, the day-to-day challenges and what you learned in this phase.]",
+  "journey.d2": "I handled support tickets and assisted users, diagnosing and solving incidents involving systems, access and equipment. I also documented solutions in the knowledge base and escalated issues to the development team when needed. This is where I learned to prioritize requests, communicate clearly and deeply understand how systems work day to day.",
   "journey.date3": "Dec 2025 – today",
   "journey.t3": "Mid-level Infrastructure & Support Analyst at GSW Software",
   "journey.d3": "I was promoted to mid-level analyst and today I work with artificial intelligence, integrations with in-house systems, security, infrastructure and scalability.",
