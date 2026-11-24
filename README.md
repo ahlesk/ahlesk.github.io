@@ -26,6 +26,10 @@ assets/img/             fotos
 - **Links:** GitHub, LinkedIn e e-mail (`mailto:`) no `index.html`.
 - **Ícones das skills:** ficam num sprite SVG no início do `<body>` (`<symbol id="i-...">`). Para usar um ícone, escreva `<svg class="ico"><use href="#i-nome"/></svg>`. Para adicionar outro, copie o SVG de [Simple Icons](https://simpleicons.org) e cole como um novo `<symbol>`, sem atributos `fill`.
 
+## Cache
+
+Os arquivos CSS/JS são carregados com `?v=N` no `index.html`. Ao publicar uma mudança neles, aumente esse número (`?v=2` → `?v=3`) para os visitantes não receberem a versão antiga do cache.
+
 ## Rodando localmente
 
 ```bash
