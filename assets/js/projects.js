@@ -226,8 +226,8 @@ window.PROJECTS = [
       pt: "Implementei <strong>funcionalidades matemáticas</strong>, validação de entradas e a organização dos menus de navegação no terminal. Também participei da <strong>migração de VisualG para TypeScript</strong> e da modularização das funcionalidades.",
       en: "I implemented <strong>math features</strong>, input validation and the terminal navigation menus. I also took part in the <strong>migration from VisualG to TypeScript</strong> and in modularizing the features."
     },
-    media: { src: "assets/img/projects/calculadora.jpg", fit: "contain", bg: "#050a2c" },
-    caption: { pt: "Calculadora Científica — Steam Ducks", en: "Scientific Calculator — Steam Ducks" },
+    media: { src: "assets/img/projects/calculadora.gif", fit: "cover" },
+    caption: { pt: "Calculadora Científica: menu do terminal e conversão de decimal para binário", en: "Scientific Calculator: terminal menu and decimal-to-binary conversion" },
     techs: [
       { name: "TypeScript", use: { pt: "lógica e operações matemáticas modulares", en: "modular logic and math operations" } },
       { name: "VisualG", use: { pt: "primeira versão do algoritmo", en: "first version of the algorithm" } },
