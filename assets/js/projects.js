@@ -148,8 +148,8 @@ window.PROJECTS = [
       pt: "Meu foco principal foi a <strong>modelagem e implementação do banco de dados</strong> com Supabase e PostgreSQL — funcionários, empresas, cargos e registros de ponto com histórico de alterações. Também participei do desenvolvimento do front-end em Vue.js e da organização da estrutura de dados da aplicação.",
       en: "My main focus was <strong>designing and implementing the database</strong> with Supabase and PostgreSQL — employees, companies, positions and time records with change history. I also worked on the Vue.js front-end and on organizing the application's data structure."
     },
-    media: { src: "assets/img/projects/pontual.jpg", fit: "contain", bg: "#fff" },
-    caption: { pt: "Modelo relacional do banco de dados do sistema", en: "The system's relational database model" },
+    media: { src: "assets/img/projects/pontual.gif", fit: "cover" },
+    caption: { pt: "Pontual: controle de acesso de funcionários externos", en: "Pontual: access control for external employees" },
     techs: [
       { name: "PostgreSQL", use: { pt: "funcionários, acessos e relacionamentos", en: "employees, access records and relationships" } },
       { name: "Supabase", use: { pt: "autenticação, arquivos e segurança com RLS", en: "auth, file storage and RLS security" } },
