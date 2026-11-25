@@ -187,8 +187,8 @@ window.PROJECTS = [
       pt: "Atuei como <strong>Scrum Master</strong>, organizando as sprints e as tarefas da equipe no Jira, acompanhando as entregas e mantendo a documentação e os artefatos do projeto em dia. Também participei da <strong>definição dos requisitos</strong> usados pela equipe durante o desenvolvimento.",
       en: "I was the <strong>Scrum Master</strong>, organizing the team's sprints and tasks in Jira, tracking deliveries and keeping the project documentation and artifacts up to date. I also took part in <strong>defining the requirements</strong> the team used during development."
     },
-    media: { src: "assets/img/projects/pacer.jpg", fit: "contain", bg: "#172240" },
-    caption: { pt: "Sistema de Avaliação PACER", en: "PACER Assessment System" },
+    media: { src: "assets/img/projects/pacer.gif", fit: "cover" },
+    caption: { pt: "PACER: avaliação da equipe por critérios e burndown da Sprint 4", en: "PACER: team assessment by criteria and the Sprint 4 burndown" },
     techs: [
       { name: "Java", use: { pt: "lógica e funcionalidades desktop orientadas a objetos", en: "object-oriented desktop logic and features" } },
       { name: "MySQL", use: { pt: "avaliações, grupos e relacionamentos", en: "assessments, groups and relationships" } },
