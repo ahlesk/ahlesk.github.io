@@ -147,7 +147,37 @@
       return '<video src="' + esc(m.src) + '"' + (m.poster ? ' poster="' + esc(m.poster) + '"' : "") + style +
         ' autoplay muted loop playsinline preload="metadata" aria-label="' + esc(tv(p.caption)) + '"></video>';
     }
-    return '<img src="' + esc(m.src) + '" alt="' + esc(tv(p.caption)) + '"' + style + ' loading="lazy" decoding="async">';
+    // GIFs são servidos como WebP animado (bem mais leve), com o GIF de reserva para navegadores antigos.
+    // Sem loading="lazy": a mídia já está pré-carregada (ver preloadProjectMedia) e deve aparecer junto com o texto.
+    var img = '<img src="' + esc(m.src) + '" alt="' + esc(tv(p.caption)) + '"' + style + ' decoding="async" fetchpriority="high">';
+    var webp = webpOf(m.src);
+    return webp ? '<picture><source srcset="' + esc(webp) + '" type="image/webp">' + img + "</picture>" : img;
+  }
+
+  function webpOf(src) { return /\.gif$/i.test(src) ? src.replace(/\.gif$/i, ".webp") : ""; }
+
+  // Baixa em segundo plano as mídias de todos os projetos (a aba aberta primeiro),
+  // para a imagem já estar no cache quando o projeto for exibido.
+  var preloaded = {};
+  function preloadProjectMedia(first) {
+    var order = projects.map(function (p, i) { return i; });
+    order.sort(function (a, b) { return (a === first ? -1 : 0) - (b === first ? -1 : 0); });
+    var supportsWebp = (function () {
+      try { return document.createElement("canvas").toDataURL("image/webp").indexOf("data:image/webp") === 0; }
+      catch (e) { return false; }
+    })();
+    (function next(k) {
+      if (k >= order.length) return;
+      var m = projects[order[k]].media || {};
+      var src = typeof m === "string" ? m : m.src;
+      if (!src || /\.(mp4|webm)$/i.test(src)) return next(k + 1);
+      var url = supportsWebp && webpOf(src) ? webpOf(src) : src;
+      if (preloaded[url]) return next(k + 1);
+      var im = new Image();
+      im.decoding = "async";
+      im.onload = im.onerror = function () { preloaded[url] = true; next(k + 1); };   // um de cada vez, sem disputar banda
+      im.src = url;
+    })(0);
   }
 
   function accHTML(list, prefix) {
@@ -541,6 +571,10 @@
 
   applyLang(lang, true);
   heroParticles();
+
+  // mídias dos projetos: baixa tudo depois que a página (e a imagem do hero) terminar de carregar
+  if (document.readyState === "complete") preloadProjectMedia(current);
+  else window.addEventListener("load", function () { preloadProjectMedia(current); });
 
   if (animate) {
     scrollAnimations();

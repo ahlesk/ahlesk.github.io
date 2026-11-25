@@ -23,6 +23,7 @@ assets/img/             fotos
 - **Versão em inglês:** mesma chave `data-i18n` em `assets/js/i18n.js`.
 - **Projetos:** `assets/js/projects.js` (nome, papel, desafio, mídia, tecnologias, skills).
 - **Fotos:** substitua `assets/img/profile.jpg` (proporção ~ 2:3).
+- **Animações dos projetos:** ficam em `assets/img/projects/`. Para cada `nome.gif` deve existir um `nome.webp` (WebP animado, bem mais leve), que é o arquivo servido aos navegadores; o GIF fica só como reserva. Para gerar: `ffmpeg -i nome.gif -c:v libwebp_anim -q:v 72 -compression_level 6 -loop 0 nome.webp`.
 - **Links:** GitHub, LinkedIn e e-mail (`mailto:`) no `index.html`.
 - **Ícones das skills:** ficam num sprite SVG no início do `<body>` (`<symbol id="i-...">`). Para usar um ícone, escreva `<svg class="ico"><use href="#i-nome"/></svg>`. Para adicionar outro, copie o SVG de [Simple Icons](https://simpleicons.org) e cole como um novo `<symbol>`, sem atributos `fill`.
 

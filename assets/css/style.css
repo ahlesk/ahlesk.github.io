@@ -310,6 +310,7 @@ main:focus { outline: none; }
   background: linear-gradient(135deg, #1d1d1d, #141414); display: grid; place-items: center; overflow: hidden;
 }
 .media img, .media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.media picture { display: contents; }
 .media__ph { text-align: center; color: var(--muted); font-size: 14px; letter-spacing: .2em; text-transform: uppercase; }
 .media__ph svg { margin: 0 auto 10px; transition: transform .4s var(--ease), color .3s; }
 .media:hover .media__ph svg { transform: scale(1.15); color: var(--accent); }
