@@ -34,15 +34,16 @@ window.I18N_EN = {
 
   "closing.kicker": "// end of a cycle, start of another",
   "closing.title": "Closing",
-  "closing.p1": "[What this phase meant to you: what changed since the beginning, what you're most proud of.]",
-  "closing.p2": "[Thanks: family, teammates, professors. Mention names if it makes sense.]",
-  "closing.p3": "[Next steps: what you want to learn or build now.]",
+  "closing.p1": "This phase was a compass for me, in my professional and personal life alike. It brought back my drive to achieve!",
+  "closing.p2": "I thank my beloved mother and my sister, who encouraged me through the hardest moments and always helped me see and focus on my goal. Thank you so much!",
+  "closing.p3": "The next step now is to keep growing as a professional, adapt to constant change and never lose myself in the process!",
 
   "contact.title": "Let's talk?",
   "contact.subtitle": "I'm open to opportunities, partnerships and good conversations about technology.",
   "contact.email": "Send e-mail",
 
   "footer.rights": "All rights reserved.",
+  "footer.quote": "“I did it because it's fun and because I love programming.”",
 
   /* textos usados pelo JS dos projetos */
   "ui.project": "Project",

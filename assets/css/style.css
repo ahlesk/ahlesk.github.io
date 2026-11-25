@@ -365,6 +365,10 @@ main:focus { outline: none; }
 .footer { background: #121212; border-top: 1px solid var(--line); padding: 26px 0; font-size: 14px; color: var(--muted); letter-spacing: .08em; }
 .footer__inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .footer p { margin: 0; }
+.footer__quote { margin: 0; text-align: right; }
+.footer__quote blockquote { margin: 0; font-style: italic; color: var(--text); letter-spacing: .03em; }
+.footer__quote figcaption { margin-top: 4px; color: var(--accent); font-size: 13px; letter-spacing: .12em; }
+@media (max-width: 560px) { .footer__quote { text-align: left; } }
 
 /* ---------- Estado inicial das animações (somente com JS) ---------- */
 .js:not(.no-anim) .reveal,
