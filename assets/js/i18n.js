@@ -43,7 +43,6 @@ window.I18N_EN = {
   "contact.email": "Send e-mail",
 
   "footer.rights": "All rights reserved.",
-  "footer.made": "made with <3 and coffee",
 
   /* textos usados pelo JS dos projetos */
   "ui.project": "Project",
